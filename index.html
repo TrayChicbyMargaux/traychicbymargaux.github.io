@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrayChic by Margaux — Trays With Attitude</title>
+<meta name="description" content="Hand-decoupaged, resin-glossed trays made in small batches. Vintage prints, gold leaf, zero beige. TrayChic by Margaux, est. 2024.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FAF6EF; --ink:#1B1B1B; --lime:#C6F542; --pink:#FF2D9B;
+    --cyan:#38BDF8; --tangerine:#F5921E; --charcoal:#242424;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--ink);font-family:'Space Grotesk',sans-serif;line-height:1.6}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;line-height:1.05}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+
+  /* ── Marquee ── */
+  .marquee{background:var(--ink);color:var(--lime);overflow:hidden;white-space:nowrap;padding:.55rem 0;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase}
+  .marquee span{display:inline-block;animation:scroll 28s linear infinite}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ── Nav ── */
+  nav{position:sticky;top:0;z-index:50;background:rgba(250,246,239,.92);backdrop-filter:blur(8px);border-bottom:2px solid var(--ink);display:flex;align-items:center;justify-content:space-between;padding:.7rem 5vw}
+  .navlinks{display:flex;gap:1.6rem;font-size:.92rem;font-weight:500;text-transform:uppercase;letter-spacing:.08em}
+  .navlinks a{text-decoration:none;position:relative}
+  .navlinks a:hover{color:var(--pink)}
+  .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+  .brand strong{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:700}
+  .brand strong em{font-style:italic;color:var(--pink)}
+
+  /* ── Hero ── */
+  header.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;padding:4.5rem 5vw 5rem;max-width:1300px;margin:0 auto}
+  .hero h1{font-size:clamp(2.6rem,6vw,4.6rem)}
+  .hero h1 .hl-lime{background:var(--lime);padding:0 .18em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+  .hero h1 .hl-pink{background:var(--pink);color:#fff;padding:0 .18em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+  .hero p.lead{margin:1.4rem 0 2rem;font-size:1.12rem;max-width:34rem}
+  .btnrow{display:flex;gap:1rem;flex-wrap:wrap}
+  .btn{display:inline-block;padding:.85rem 1.7rem;border:2px solid var(--ink);border-radius:999px;font-weight:700;text-decoration:none;text-transform:uppercase;letter-spacing:.06em;font-size:.9rem;transition:.15s;box-shadow:4px 4px 0 var(--ink)}
+  .btn:hover{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+  .btn.lime{background:var(--lime)} .btn.pink{background:var(--pink);color:#fff}
+  .heropic{position:relative}
+  .heropic img{border:3px solid var(--ink);border-radius:18px;box-shadow:10px 10px 0 var(--pink);transform:rotate(2deg)}
+  .heropic .sticker{position:absolute;top:-26px;right:-14px;background:var(--tangerine);color:var(--ink);font-weight:700;padding:.7rem 1rem;border-radius:999px;border:2px solid var(--ink);transform:rotate(8deg);font-size:.85rem;text-transform:uppercase}
+
+  /* ── Section scaffolding ── */
+  section{padding:4.5rem 5vw;max-width:1300px;margin:0 auto}
+  .kicker{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;background:var(--ink);color:var(--lime);padding:.3rem .8rem;border-radius:999px;margin-bottom:1rem}
+  h2{font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:1rem}
+
+  /* ── About ── */
+  .about{display:grid;grid-template-columns:.85fr 1.15fr;gap:3.5rem;align-items:center}
+  .about img{border:3px solid var(--ink);border-radius:18px;box-shadow:-10px 10px 0 var(--lime);transform:rotate(-2deg)}
+  .about p{margin-bottom:1rem;max-width:36rem}
+  .about .sig{font-family:'Fraunces',serif;font-style:italic;font-size:1.5rem;color:var(--pink)}
+
+  /* ── Gallery ── */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.6rem;margin-top:2.5rem}
+  .card{background:#fff;border:2.5px solid var(--ink);border-radius:16px;overflow:hidden;transition:.18s;text-decoration:none}
+  .card:nth-child(4n+1):hover{transform:rotate(-1.5deg) translateY(-4px);box-shadow:6px 8px 0 var(--pink)}
+  .card:nth-child(4n+2):hover{transform:rotate(1.5deg) translateY(-4px);box-shadow:6px 8px 0 var(--lime)}
+  .card:nth-child(4n+3):hover{transform:rotate(-1.5deg) translateY(-4px);box-shadow:6px 8px 0 var(--cyan)}
+  .card:nth-child(4n+4):hover{transform:rotate(1.5deg) translateY(-4px);box-shadow:6px 8px 0 var(--tangerine)}
+  .card img{aspect-ratio:1/1;object-fit:cover;width:100%;border-bottom:2.5px solid var(--ink)}
+  .card .meta{padding:.9rem 1rem 1.1rem}
+  .card .meta h3{font-size:1.15rem}
+  .card .meta small{text-transform:uppercase;letter-spacing:.12em;font-size:.7rem;color:#777}
+
+  /* ── Process ── */
+  .process{background:var(--ink);color:var(--cream);max-width:none}
+  .process .inner{max-width:1300px;margin:0 auto}
+  .process .kicker{background:var(--lime);color:var(--ink)}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.6rem;margin-top:2.5rem}
+  .step{border:2px solid var(--cream);border-radius:16px;padding:1.6rem}
+  .step b{display:block;font-family:'Fraunces',serif;font-size:2.4rem;margin-bottom:.4rem}
+  .step:nth-child(1) b{color:var(--lime)} .step:nth-child(2) b{color:var(--pink)}
+  .step:nth-child(3) b{color:var(--cyan)} .step:nth-child(4) b{color:var(--tangerine)}
+
+  /* ── Lifestyle strip ── */
+  .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:2.5rem}
+  .strip figure{border:2.5px solid var(--ink);border-radius:16px;overflow:hidden;background:#fff}
+  .strip img{aspect-ratio:4/5;object-fit:cover;width:100%}
+  .strip figcaption{padding:.7rem 1rem;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;border-top:2.5px solid var(--ink)}
+
+  /* ── CTA ── */
+  .cta{text-align:center}
+  .cta .box{background:var(--lime);border:3px solid var(--ink);border-radius:24px;padding:3.5rem 2rem;box-shadow:10px 10px 0 var(--ink)}
+  .cta p{max-width:34rem;margin:1rem auto 2rem}
+
+  /* ── Footer ── */
+  footer{background:var(--ink);color:var(--cream);padding:3rem 5vw;margin-top:4rem}
+  .foot{max-width:1300px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}
+  .foot .links{display:flex;gap:1.4rem;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em}
+  .foot .links a{text-decoration:none} .foot .links a:hover{color:var(--pink)}
+  .foot small{opacity:.6}
+
+  /* ── Seal ── */
+  .seal{width:64px;height:64px} footer .seal{width:88px;height:88px}
+
+  @media(max-width:820px){
+    header.hero,.about{grid-template-columns:1fr}
+    .strip{grid-template-columns:1fr}
+    .navlinks{display:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="marquee"><span>
+ HAND-DECOUPAGED ★ RESIN-GLOSSED ★ SMALL BATCHES ★ VINTAGE PRINTS ★ GOLD LEAF ★ ZERO BEIGE ★
+ HAND-DECOUPAGED ★ RESIN-GLOSSED ★ SMALL BATCHES ★ VINTAGE PRINTS ★ GOLD LEAF ★ ZERO BEIGE ★
+</span></div>
+
+<nav>
+  <a class="brand" href="#top">
+    <svg class="seal" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="47" fill="none" stroke="#FF2D9B" stroke-width="2"/>
+      <circle cx="50" cy="50" r="41" fill="none" stroke="#FF2D9B" stroke-width="1"/>
+      <defs><path id="arcT" d="M 50,50 m -33,0 a 33,33 0 1,1 66,0"/>
+            <path id="arcB" d="M 50,50 m -33,0 a 33,33 0 1,0 66,0"/></defs>
+      <text font-family="Space Grotesk,sans-serif" font-size="10.5" letter-spacing="3.5" fill="#FF2D9B"><textPath href="#arcT" startOffset="14%">TRAYCHIC</textPath></text>
+      <text font-family="Space Grotesk,sans-serif" font-size="7" letter-spacing="2" fill="#FF2D9B"><textPath href="#arcB" startOffset="33%">BY MARGAUX</textPath></text>
+      <text x="50" y="56" text-anchor="middle" font-family="Fraunces,serif" font-size="24" fill="#1B1B1B">TC</text>
+      <text x="50" y="68" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="5.5" letter-spacing="1.5" fill="#1B1B1B">EST. 2024</text>
+      <circle cx="14" cy="50" r="2" fill="#38BDF8"/><circle cx="86" cy="50" r="2" fill="#38BDF8"/>
+    </svg>
+    <strong>TrayChic <em>by Margaux</em></strong>
+  </a>
+  <div class="navlinks">
+    <a href="#story">Our Story</a>
+    <a href="#trays">The Trays</a>
+    <a href="#craft">The Craft</a>
+    <a href="#inreallife">In Real Life</a>
+    <a href="#getone">Get One</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div>
+    <h1>Posh trays.<br><span class="hl-lime">Punk energy.</span><br>Made by <span class="hl-pink">hand.</span></h1>
+    <p class="lead">Vintage natural-history prints, hand-torn papers and proper gold leaf, sealed under glass-deep resin. Every TrayChic tray is decoupaged one at a time — no two alike, none of them boring.</p>
+    <div class="btnrow">
+      <a class="btn pink" href="#trays">See the trays</a>
+      <a class="btn lime" href="#story">Meet Margaux</a>
+    </div>
+  </div>
+  <div class="heropic">
+    <img src="assets/hero-wall.jpg" alt="A wall of colourful TrayChic decoupage trays">
+    <div class="sticker">Small batch ✸ Big mood</div>
+  </div>
+</header>
+
+<section id="story" class="about">
+  <img src="assets/margaux.jpg" alt="Margaux with her wall of trays">
+  <div>
+    <span class="kicker">Our Story</span>
+    <h2>Meet Margaux</h2>
+    <p>Some people doom-scroll. I decoupage. What started as one rescued tray, a jellyfish print and a very steady hand has turned into TrayChic — a small-batch studio practice with a serious gold-leaf habit.</p>
+    <p>Every tray begins life as honest wood. I hunt down the prints — Haeckel's jellyfish, prowling tigers, coiled snakes, moonlit pines — tear, layer and gild by hand, then flood the lot with resin until it shines like glass. It's slow. It's fiddly. It's completely worth it.</p>
+    <p>They're built to be used: breakfasts, negronis, keys, jewellery, remote controls that finally have a home. Beauty with utility — just louder.</p>
+    <p class="sig">— Margaux x</p>
+  </div>
+</section>
+
+<section id="trays">
+  <span class="kicker">The Collection</span>
+  <h2>The trays</h2>
+  <p style="max-width:36rem">Handcrafted in small batches. When a design's gone, it's gone — so don't play it cool for too long.</p>
+  <div class="grid">
+    <a class="card" href="#getone"><img src="assets/tray-boxfish.jpg" alt="Red and gold box-fish tray"><div class="meta"><h3>The Box-Fish</h3><small>Crimson · crackle · gold leaf</small></div></a>
+    <a class="card" href="#getone"><img src="assets/tray-jellyfish.jpg" alt="Sage green Haeckel jellyfish tray"><div class="meta"><h3>The Jellyfish</h3><small>Sage · Haeckel print · heart handle</small></div></a>
+    <a class="card" href="#getone"><img src="assets/tray-radiolaria.jpg" alt="Teal and gold radiolaria tray"><div class="meta"><h3>The Radiolaria</h3><small>Teal · gilded frame</small></div></a>
+    <a class="card" href="#getone"><img src="assets/tray-hummingbird.jpg" alt="Pale blue hummingbird tray with neon rim"><div class="meta"><h3>The Hummingbird</h3><small>Powder blue · neon edge</small></div></a>
+    <a class="card" href="#getone"><img src="assets/tray-snake.jpg" alt="Green palm snake tray"><div class="meta"><h3>The Serpent</h3><small>Palm fronds · forest green</small></div></a>
+    <a class="card" href="#getone"><img src="assets/tray-moonpine.jpg" alt="Gold leaf moonlit pine tray"><div class="meta"><h3>The Moonlit Pine</h3><small>Full gold leaf · Hasui print</small></div></a>
+    <a class="card" href="#getone"><img src="assets/tray-london.jpg" alt="Red London skyline tray"><div class="meta"><h3>The London</h3><small>Skyline silhouette · pillar-box red</small></div></a>
+    <a class="card" href="#getone"><img src="assets/tray-bateman.jpg" alt="Gold Bateman cartoon tray"><div class="meta"><h3>The Bateman</h3><small>Vintage cartoon · gold weave</small></div></a>
+  </div>
+</section>
+
+<section class="process" id="craft">
+  <div class="inner">
+    <span class="kicker">The Craft</span>
+    <h2>How a TrayChic tray happens</h2>
+    <div class="steps">
+      <div class="step"><b>01</b><h3>The hunt</h3><p>Vintage natural-history plates, cartoons and skylines — sourced, cut and composed until the tray tells a story.</p></div>
+      <div class="step"><b>02</b><h3>The layers</h3><p>Hand-torn papers, painted borders and crackle finishes, built up layer by patient layer.</p></div>
+      <div class="step"><b>03</b><h3>The gold</h3><p>Real gold leaf, laid by hand. It flashes when the light moves. That's the point.</p></div>
+      <div class="step"><b>04</b><h3>The gloss</h3><p>Deep resin pour for a glass-like, wipe-clean finish. Gorgeous AND dishwasher-adjacent (a damp cloth, please).</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="inreallife">
+  <span class="kicker">In Real Life</span>
+  <h2>Not just for looking at</h2>
+  <div class="strip">
+    <figure><img src="assets/life-coffee.jpg" alt="Tray with moka pot and iced coffee"><figcaption>Morning coffee, upgraded</figcaption></figure>
+    <figure><img src="assets/life-catchall.jpg" alt="Gold tray used as jewellery catch-all"><figcaption>The bedside catch-all</figcaption></figure>
+    <figure><img src="assets/life-coral.jpg" alt="Black and white coral print tray"><figcaption>Statement piece, any room</figcaption></figure>
+  </div>
+</section>
+
+<section class="cta" id="getone">
+  <div class="box">
+    <h2>Get one before they're gone</h2>
+    <p>Every tray is one of a tiny batch. Shop the current drop on Etsy, or follow along on Instagram for works-in-progress, restocks and the occasional resin disaster.</p>
+    <div class="btnrow" style="justify-content:center">
+      <a class="btn pink" href="https://traychicbymargaux.etsy.com" target="_blank" rel="noopener">Shop on Etsy</a>
+      <a class="btn" style="background:#fff" href="#" title="Add your Instagram link here">@TrayChic on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <svg class="seal" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="47" fill="none" stroke="#C6F542" stroke-width="2"/>
+      <circle cx="50" cy="50" r="41" fill="none" stroke="#C6F542" stroke-width="1"/>
+      <defs><path id="farcT" d="M 50,50 m -33,0 a 33,33 0 1,1 66,0"/>
+            <path id="farcB" d="M 50,50 m -33,0 a 33,33 0 1,0 66,0"/></defs>
+      <text font-family="Space Grotesk,sans-serif" font-size="10.5" letter-spacing="3.5" fill="#C6F542"><textPath href="#farcT" startOffset="14%">TRAYCHIC</textPath></text>
+      <text font-family="Space Grotesk,sans-serif" font-size="7" letter-spacing="2" fill="#C6F542"><textPath href="#farcB" startOffset="33%">BY MARGAUX</textPath></text>
+      <text x="50" y="56" text-anchor="middle" font-family="Fraunces,serif" font-size="24" fill="#FAF6EF">TC</text>
+      <text x="50" y="68" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="5.5" letter-spacing="1.5" fill="#FAF6EF">EST. 2024</text>
+      <circle cx="14" cy="50" r="2" fill="#FF2D9B"/><circle cx="86" cy="50" r="2" fill="#FF2D9B"/>
+    </svg>
+    <div class="links">
+      <a href="#story">About</a><a href="#getone">Contact</a><a href="#trays">Trays</a><a href="#craft">Craft</a>
+    </div>
+    <small>© 2026 TrayChic by Margaux · Handmade, small batches, zero beige.</small>
+  </div>
+</footer>
+
+</body>
+</html>
